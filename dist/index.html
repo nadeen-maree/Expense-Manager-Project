@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expenses Manager</title>
+</head>
+<body>
+    <div class="container">
+        <div id="expensesList">
+            <script id="expenses-template" type="text/x-handlebars-template">
+                <h2>Expenses</h2>
+                <ul>
+                {{#each expenses}}
+                    <li>{{item}} - {{amount}} - {{group}} - {{date}}</li>
+                {{/each}}
+                </ul>
+            </script>
+        </div>
+        
+        <div id="addExpenseForm">
+            <script id="add-expense-template" type="text/x-handlebars-template">
+                <h2>Add Expense</h2>
+                <form id="expenseForm">
+                <label for="item">Item:</label>
+                <input type="text" id="item" name="item"><br><br>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount"><br><br>
+                <label for="group">Group:</label>
+                <input type="text" id="group" name="group"><br><br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+                <button type="submit">Add Expense</button>
+                </form>
+            </script>
+        </div>
+    </div>
+  
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="renderer.js"></script>
+    <script src="expenseManager.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
